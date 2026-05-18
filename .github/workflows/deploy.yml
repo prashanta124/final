@@ -1,0 +1,41 @@
+name: Deploy Website
+
+on:
+  push:
+    branches: ["main"] # This tells the robot to work whenever you upload code
+
+# This is the "Sticky Note" that fixes the warning!
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true 
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24 # Using the new brain!
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Upload to Folders
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
