@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magdalena Wischnewski | Academic Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#0f172a',
+                        accent: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .section-padding { padding: 5rem 1.5rem; max-width: 64rem; margin: 0 auto; }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <div class="text-xl font-display font-bold text-primary">M.W.</div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#about" class="hover:text-accent transition-colors">About</a>
+                <a href="#experience" class="hover:text-accent transition-colors">Experience</a>
+                <a href="#publications" class="hover:text-accent transition-colors">Publications</a>
+                <a href="#grants" class="hover:text-accent transition-colors">Grants</a>
+                <a href="#teaching" class="hover:text-accent transition-colors">Teaching</a>
+            </div>
+            <button class="md:hidden p-2 text-primary" onclick="toggleMobileMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (Overlay) -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 hidden flex flex-col items-center justify-center gap-8 text-xl font-display font-bold md:hidden">
+        <button class="absolute top-6 right-6" onclick="toggleMobileMenu()"><i data-lucide="x"></i></button>
+        <a href="#about" onclick="toggleMobileMenu()">About</a>
+        <a href="#experience" onclick="toggleMobileMenu()">Experience</a>
+        <a href="#publications" onclick="toggleMobileMenu()">Publications</a>
+        <a href="#grants" onclick="toggleMobileMenu()">Grants</a>
+        <a href="#teaching" onclick="toggleMobileMenu()">Teaching</a>
+    </div>
+
+    <main>
+        <!-- Hero -->
+        <section id="about" class="pt-40 pb-20 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="fade-in">
+                <span class="inline-block py-1 px-3 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-wider mb-6">Research Portfolio</span>
+                <h1 class="text-5xl md:text-7xl font-display font-bold text-primary mb-6 leading-tight">
+                    Magdalena <br><span class="text-accent">Wischnewski</span>
+                </h1>
+                <p class="text-xl text-slate-600 mb-8 max-w-lg leading-relaxed">
+                    Junior Research Group Leader of Human Factors in AI Systems. Investigating the intersection of Human-Computer Interaction, Cognitive Psychology, and AI.
+                </p>
+                <div class="flex flex-wrap gap-6 mb-10">
+                    <div class="flex items-center gap-2 text-slate-500 text-sm">
+                        <i data-lucide="mail" class="w-4 h-4 text-accent"></i> magdalena.wischnewski@uni-due.de
+                    </div>
+                    <div class="flex items-center gap-2 text-slate-500 text-sm">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-accent"></i> Duisburg-Essen, Germany
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <a href="mailto:magdalena.wischnewski@uni-due.de" class="bg-primary text-white px-8 py-3 rounded-lg font-medium shadow-lg hover:bg-slate-800 transition-all">Contact Me</a>
+                    <div class="flex gap-2">
+                        <a href="#" class="p-3 rounded-lg border border-slate-200 hover:border-accent hover:text-accent transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                        <a href="#" class="p-3 rounded-lg border border-slate-200 hover:border-accent hover:text-accent transition-all"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="fade-in group relative hidden md:block">
+                <div class="aspect-square relative flex items-center justify-center p-8">
+                    <div class="absolute inset-0 bg-accent/5 rounded-3xl -rotate-6 transition-transform group-hover:rotate-0"></div>
+                    <div class="absolute inset-0 border border-slate-200 rounded-3xl rotate-3 transition-transform group-hover:rotate-0"></div>
+                    <div class="z-10 bg-white p-8 rounded-2xl shadow-xl border border-slate-100 w-full max-w-sm">
+                        <div class="flex gap-2 mb-6">
+                            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="h-4 bg-slate-100 rounded w-3/4"></div>
+                            <div class="h-4 bg-slate-100 rounded w-1/2"></div>
+                            <div class="h-4 bg-slate-100 rounded w-5/6"></div>
+                            <div class="pt-4 flex gap-2">
+                                <div class="h-8 w-20 bg-accent/20 rounded"></div>
+                                <div class="h-8 w-16 bg-slate-100 rounded"></div>
+                            </div>
+                        </div>
+                        <div class="mt-12">
+                            <p class="text-[10px] font-mono text-slate-400 uppercase tracking-widest leading-loose">
+                                // Human-AI Interaction<br>
+                                // Trust Engineering<br>
+                                // Misinformation Research
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="section-padding">
+            <div class="flex items-center gap-4 mb-12 fade-in">
+                <h2 class="text-3xl font-display font-bold text-slate-900">Academic Positions</h2>
+                <div class="h-px flex-1 bg-slate-200"></div>
+            </div>
+            <div class="space-y-12">
+                <div class="fade-in relative pl-8 border-l border-slate-200">
+                    <div class="absolute left-[-5px] top-2 w-2.5 h-2.5 rounded-full bg-accent"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-primary">Junior Research Group Leader</h3>
+                        <span class="text-sm font-semibold text-accent">Since May 2026</span>
+                    </div>
+                    <p class="text-slate-900 font-medium mb-2">University of Duisburg-Essen</p>
+                    <p class="text-slate-500 text-sm">Human Factors in AI Systems, Research Center for Trustworthy Data Science and Security.</p>
+                </div>
+                <div class="fade-in relative pl-8 border-l border-slate-200">
+                    <div class="absolute left-[-5px] top-2 w-2.5 h-2.5 rounded-full bg-accent"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-primary">Post-Doctoral Researcher</h3>
+                        <span class="text-sm font-semibold text-accent">2021 – Present</span>
+                    </div>
+                    <p class="text-slate-900 font-medium mb-2">TU Dortmund, Germany</p>
+                    <p class="text-slate-500 text-sm">Focusing on trustworthy data science and human-centered AI evaluation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications" class="section-padding bg-slate-100/50">
+            <div class="flex items-center gap-4 mb-12 fade-in">
+                <h2 class="text-3xl font-display font-bold text-slate-900">Publications</h2>
+                <div class="h-px flex-1 bg-slate-200"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="fade-in group p-6 rounded-2xl bg-white border border-slate-200 hover:border-accent hover:shadow-lg transition-all">
+                    <div class="flex justify-between mb-4">
+                        <span class="text-xs font-bold text-accent uppercase tracking-widest">Journal Article</span>
+                        <span class="text-xs font-bold text-slate-400">2026</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-primary mb-4 leading-tight">Generative AI, Large Language Models and their Agentic Framing in News Media</h4>
+                    <p class="text-sm text-slate-500 mb-6 italic">Nguyen, D., & Wischnewski, M.</p>
+                    <a href="https://doi.org/10.1007/s00146-026-03070-1" target="_blank" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-tighter text-accent hover:gap-3 transition-all">View DOI <i data-lucide="external-link" class="w-3 h-3"></i></a>
+                </div>
+                <div class="fade-in group p-6 rounded-2xl bg-white border border-slate-200 hover:border-accent hover:shadow-lg transition-all">
+                    <div class="flex justify-between mb-4">
+                        <span class="text-xs font-bold text-accent uppercase tracking-widest">Conference Paper</span>
+                        <span class="text-xs font-bold text-slate-400">2026</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-primary mb-4 leading-tight">Certified But Imperfect: Investigating AI Certifications & Trust</h4>
+                    <p class="text-sm text-slate-500 mb-6 italic">Wischnewski, M., Scharmann, A., Ridder, A., & Krämer, N.</p>
+                    <a href="#" target="_blank" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-tighter text-accent hover:gap-3 transition-all">CHI 2026 <i data-lucide="external-link" class="w-3 h-3"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grants -->
+        <section id="grants" class="section-padding">
+            <div class="flex items-center gap-4 mb-12 fade-in">
+                <h2 class="text-3xl font-display font-bold text-slate-900">Grants & Awards</h2>
+                <div class="h-px flex-1 bg-slate-200"></div>
+            </div>
+            <div class="space-y-6">
+                <div class="fade-in p-6 rounded-2xl bg-white border border-slate-200 flex gap-6">
+                    <div class="w-12 h-12 shrink-0 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600"><i data-lucide="award"></i></div>
+                    <div>
+                        <h3 class="text-lg font-bold text-primary mb-1">DAISY: Privacy & Interests in AI-as-a-Service</h3>
+                        <p class="text-sm text-slate-500">Funder: BMFTR | Amount: ~1.22M€ | Status: In review</p>
+                    </div>
+                </div>
+                <div class="fade-in p-6 rounded-2xl bg-white border border-slate-200 flex gap-6">
+                    <div class="w-12 h-12 shrink-0 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600"><i data-lucide="award"></i></div>
+                    <div>
+                        <h3 class="text-lg font-bold text-primary mb-1">Future Scenarios of Human-AI Teaming</h3>
+                        <p class="text-sm text-slate-500">Funder: Center for Advanced Internet Studies (CAIS) | 2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teaching -->
+        <section id="teaching" class="section-padding">
+            <div class="flex items-center gap-4 mb-12 fade-in">
+                <h2 class="text-3xl font-display font-bold text-slate-900">Teaching</h2>
+                <div class="h-px flex-1 bg-slate-200"></div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div class="fade-in p-4 rounded-xl border border-slate-100 bg-white">
+                    <p class="text-xs font-bold text-accent mb-1 underline">Winter 22/23</p>
+                    <p class="text-sm font-medium text-primary">Research Project: Trust in AI</p>
+                </div>
+                <div class="fade-in p-4 rounded-xl border border-slate-100 bg-white">
+                    <p class="text-xs font-bold text-accent mb-1 underline">Summer 2020</p>
+                    <p class="text-sm font-medium text-primary">Psychological intervention & SDGs</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-primary text-white py-12 px-6">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <h2 class="text-2xl font-display font-bold mb-2">M. Wischnewski</h2>
+                <p class="text-slate-400 text-sm">Human Factors in AI & Trust Research</p>
+            </div>
+            <div class="flex gap-6 text-sm text-slate-400">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+                <a href="mailto:magdalena.wischnewski@uni-due.de" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+        <div class="mt-12 text-center text-xs text-slate-600">
+            © 2026 Magdalena Wischnewski. Built with focus.
+        </div>
+    </footer>
+
+    <!-- Lucide Icons & Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('glass', 'shadow-sm', 'py-4');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.remove('glass', 'shadow-sm', 'py-4');
+                nav.classList.add('py-6');
+            }
+        });
+
+        // Simple Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
